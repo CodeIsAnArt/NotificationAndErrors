@@ -1,0 +1,15 @@
+.error-box{
+  font-weight: bold;
+  background: gray;
+  border-radius: 50px;
+  display: inline;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  padding: 10px;
+  color:white;
+  opacity: 0;
+  z-index: 99999999;
+}

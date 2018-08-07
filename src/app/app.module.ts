@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {TokenInterceptorService} from './token-interceptor.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NotificationsAndErrorsModule} from './notifications-and-errors/notifications-and-errors.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NotificationsAndErrorsModule
   ],
   providers: [
     {

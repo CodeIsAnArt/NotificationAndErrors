@@ -11,6 +11,7 @@
   padding: 10px;
   color:white;
   opacity: 0;
+  z-index: 99999999;
 }
 .parent{
   position: relative;

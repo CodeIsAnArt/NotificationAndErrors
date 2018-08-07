@@ -6,22 +6,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [
-    trigger('heroState', [
-      state('inactive', style({
-        bottom: '0',
-        opacity: 0,
-      })),
-      state('active', style({
-        bottom: '20px',
-        opacity: 1,
-      })),
-      transition('* => active', animate('200ms ease-in')),
-      transition('inactive => active', animate('200ms ease-in')),
-      transition('active => inactive', animate('200ms ease-out'))
-    ])
-  ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   title = 'app';
