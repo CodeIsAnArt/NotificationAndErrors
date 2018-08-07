@@ -17,8 +17,9 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         bottom: '20px',
         opacity: 1,
       })),
-      transition('inactive => active', animate('500ms ease-in')),
-      transition('active => inactive', animate('500ms ease-out'))
+      transition('* => active', animate('200ms ease-in')),
+      transition('inactive => active', animate('200ms ease-in')),
+      transition('active => inactive', animate('200ms ease-out'))
     ])
   ]
 })
