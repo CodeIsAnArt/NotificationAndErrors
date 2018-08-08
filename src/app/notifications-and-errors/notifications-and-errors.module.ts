@@ -11,7 +11,7 @@ import {ShowNotificationToastDirective} from './show-notification-toast.directiv
   declarations: [NotificationsComponent, ErrorsComponent, ShowNotificationToastDirective],
   exports: [NotificationsComponent, ShowNotificationToastDirective],
   entryComponents: [
-    NotificationsComponent],
+    NotificationsComponent, ErrorsComponent],
 })
 export class NotificationsAndErrorsModule {
 }

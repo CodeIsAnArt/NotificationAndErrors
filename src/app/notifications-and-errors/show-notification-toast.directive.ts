@@ -1,26 +1,41 @@
-import {AfterViewInit, ComponentFactoryResolver, ComponentRef, Directive, ElementRef, ViewContainerRef} from '@angular/core';
+import {
+  AfterViewInit,
+  ComponentFactoryResolver,
+  ComponentRef,
+  Directive,
+  ElementRef,
+  ViewContainerRef,
+  Renderer2,
+  OnInit
+} from '@angular/core';
 import {NotificationsComponent} from './notifications/notifications.component';
+import {ErrorsComponent} from './errors/errors.component';
+import {ErrorsAndNotificationService} from './errors-and-notification.service';
 
 @Directive({
   selector: '[appShowNotificationToast]'
 })
-export class ShowNotificationToastDirective implements AfterViewInit {
+export class ShowNotificationToastDirective implements OnInit {
 
   private notificationCompRef: ComponentRef<NotificationsComponent>;
   factory: any;
 
   constructor(private viewContainerRef: ViewContainerRef,
               private resolver: ComponentFactoryResolver,
-              private elRef: ElementRef) {
+              private elRef: ElementRef,
+              private errorsAndNotificationService: ErrorsAndNotificationService,
+              private renderer: Renderer2) {
   }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     // factory comp resolver
-    this.factory = this.resolver.resolveComponentFactory(NotificationsComponent);
-    // this.notificationCompRef.instance.toastState = 'active';
+    //this.addErrorsView();
+    this.errorsAndNotificationService.viewRef = this.viewContainerRef;
   }
 
-  addKB() {
+  addErrorsView() {
+    this.factory = this.resolver.resolveComponentFactory(ErrorsComponent);
     this.notificationCompRef = this.viewContainerRef.createComponent(this.factory);
+
   }
 }

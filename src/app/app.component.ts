@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Http, HttpModule} from '@angular/http';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ErrorsAndNotificationService} from './notifications-and-errors/errors-and-notification.service';
 
 @Component({
   selector: 'app-root',
@@ -12,16 +13,19 @@ export class AppComponent implements OnInit {
   title = 'app';
   toastState;
 
-  constructor(private  http: HttpClient) {
+  constructor(private  http: HttpClient,
+              private errorsAndNotificationService: ErrorsAndNotificationService) {
 
   }
 
   toggleState() {
-    if (this.toastState === 'active') {
-      this.toastState = 'inactive';
-    } else {
-      this.toastState = 'active';
-    }
+   this.errorsAndNotificationService.addElement();
+
+    // if (this.toastState === 'active') {
+    //   this.toastState = 'inactive';
+    // } else {
+    //   this.toastState = 'active';
+    // }
   }
 
   ngOnInit() {

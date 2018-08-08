@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ErrorsAndNotificationService} from '../errors-and-notification.service';
 
 @Component({
   selector: 'app-notifications',
@@ -22,9 +23,9 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ]
 })
 export class NotificationsComponent implements OnInit {
-  // public toastState = 'active';
+  public toastState = 'active';
 
-  constructor() {
+  constructor(private errorsAndNotificationService: ErrorsAndNotificationService) {
   }
 
   ngOnInit() {

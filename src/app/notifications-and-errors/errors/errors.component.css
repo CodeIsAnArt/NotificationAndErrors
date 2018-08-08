@@ -1,0 +1,24 @@
+.make-errors-sticky{
+  position: sticky;
+  top: 0;
+}
+
+.error-list{
+  list-style-type: none;
+  padding: 0;
+  color: #fff;
+}
+.error-list-item{
+  padding: 5px;
+  background: #deafaf;
+  border: 1px solid rgba(0,0,0,.125);
+  padding-right: 15px;
+}
+.close-item:before{
+  content:'x'
+}
+.close-item{
+  float: right;
+  color: black;
+  font-weight: bold;
+}
